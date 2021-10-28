@@ -1,0 +1,33 @@
+cod baze de date laborator:
+exercitiul 3.	Afișează denumirea și id_facultate pentru facultățile care au id_facultate impar:
+SELECT denumire , id_facultate FROM universitate.facultate Where id_facultate % 2=1;
+
+exercitiul 4.	Afișează naționalitatea și numele persoanelor care au in componenta numelui litera “a”.
+SELECT nationalitate,nume FROM universitate.persoana where nume like '%a%'
+
+exercitiul 5.	Afișează grupa studenților care au bursa și sunt în semestrul 2.
+SELECT grupa FROM universitate.student where bursa=100 And semestru=2;
+
+exercitiul 6.	Afișează lista tuturor numelor persoanelor, ordonate în ordine alfabetică.
+SELECT nume FROM universitate.persoana order by nume;
+
+exercitiul 7.	Afișează lista cu numele primelor 10 persoane, ordonate în ordine alfabetică
+???????
+SELECT nume FROM universitate.persoana order by nume DESC;
+
+exercitiul 8.	Afișează numele decanilor care conduc facultăți fondate între anii 1900,1995. Rezolvă exercițiul prin 3 metode:
+SELECT decan FROM universitate.facultate where an_fondare between 1905 and 1995;
+SELECT decan FROM universitate.facultate where an_fondare like '%19%';
+SELECT decan FROM universitate.facultate where an_fondare <1995 and an_fondare >1905;
+
+exercitiul 9.	Adaugă în tabela materie o înregistrare cu materia: Etica.
+insert into universitate.materie(id_materie,id_specializare,denumire,an_de_studiu,semestru,profesor)
+values
+(180,6,"Etica",1,1,"Constantin Dumitrescu")
+
+exercitiul 10.	Șterge toate materiile care contin string-ul “tica”.
+delete from universitate.materie
+where denumire like '%tica';
+
+exercitiul Afișează toate atributele pentru toate înregistrările din tabela specializare. Rezolvă exercițiul prin 2 metode.
+SELECT * FROM universitate.materie;
